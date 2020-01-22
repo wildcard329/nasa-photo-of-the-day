@@ -1,5 +1,9 @@
-import React from "react";
-import "./App.css";
+import React, {
+        useState,
+        useEffect
+} from "react";
+import InformationCard from "./components/InformationCard";
+import axios from "axios";
 
 function App() {
   return (
