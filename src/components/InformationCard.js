@@ -1,30 +1,34 @@
-import React, {
-    useState,
-    useEffect
-} from "react";
-import ReactDOM from "react-dom";
-// import "../index.css";
-import App from "../App";
+import React, { useState, useEffect } from "react";
+import PictureCard from "./PictureCard";
 import axios from "axios";
 
 
-import "./App.css";
-function ApiCall(){
-  const [data, setData] = []
-  useEffect(() => {
-  axios
-      .get(
-          'https://api.nasa.gov/#apod'
-      )
-      .then(response => {
-          console.log(response.data)
-      })
-      .catch(error => {
-          console.log(
-              "ERROR",
-              error
-          );
-      });
-}, []);
-}
+function InformationCard(){
+    const [info, setInfo] = useState([]);
 
+    useEffect(() => {
+        axios.get('https://api.nasa.gov/planetary/apod?api_key=BmXS4URWUlUC6v7c7BahafFhyGUPSqNiVVgaewus')
+            .then(response => {
+                console.log(response.data)
+            setInfo(response.data);
+             })
+            .catch(error => {
+                console.log(error)
+            })
+           
+    }, []);
+    return (
+        <div>
+            <PictureCard
+                    key={info.date}
+                    title={info.title}
+                    date={info.date}
+                    explanation={info.explanation}
+                    url={info.url}
+                    info={info}
+                    />
+
+        </div>
+    )
+}
+export default InformationCard;
