@@ -1,4 +1,10 @@
 import React from "react";
+import {
+    Card,
+    CardText,
+    CardTitle,
+    CardSubtitle
+} from "reactstrap";
 
 const PictureCard = props => {
     return (
