@@ -19,7 +19,7 @@ const PictureCard = props => {
         <div>
             <button color="black" backgroundColor="black" onClick={toggle} style={{marginBottom: '1rem'}}>CLICK</button>
             <Collapse isOpen={isOpen}>
-                <Card>
+                <Card style={{backgroundColor: "yellow"}}>
                     <CardBody>
                         <Card style={{backgroundColor: "gray", color: "yellow"}}>
                             <CardTitle>{props.title}</CardTitle>
