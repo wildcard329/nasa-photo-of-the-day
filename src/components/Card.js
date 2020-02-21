@@ -18,20 +18,14 @@ export default function Card() {
 
     return (
         <div className="card">
-                return (
                     <CardMaker
                         key={data.date}
                         date={data.date}
+                        title={data.title}
                         explanation={data.explanation}
                         hdurl={data.hdurl}
                         title={data.title}
-                    />
-                )
-                
-
-            )
-            
-
+                    />                
         </div>
         
 
